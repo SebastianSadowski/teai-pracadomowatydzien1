@@ -16,7 +16,9 @@ public class StartProfile implements iProfile{
     @Override
     public void calculatePrice(List<Item> itemList) {
         BigDecimal receipt = new BigDecimal("0");
-        itemList.forEach(it -> receipt.add(it.getPrice()));
-        System.out.println(String.format("Cena przedmiotów to: %f ", receipt.floatValue()));
+        for(Item item: itemList){
+            receipt = receipt.add(item.getPrice());
+        }
+        System.out.println(String.format("Cena przedmiotów to: %.2f ", receipt.floatValue()));
     }
 }

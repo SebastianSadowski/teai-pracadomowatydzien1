@@ -36,7 +36,7 @@ BigDecimal receipt = new BigDecimal("0.0");
 
 
 
-        receipt.multiply(new BigDecimal(VAT/100));
+        receipt.multiply(new BigDecimal((float) (100+VAT)/100));
         System.out.println(String.format("Twój profil PLUS obliczył cene z VAT równą: %.2f", receipt.floatValue()));
     }
 }
