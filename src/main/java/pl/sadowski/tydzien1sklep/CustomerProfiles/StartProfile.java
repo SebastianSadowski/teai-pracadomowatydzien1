@@ -19,6 +19,6 @@ public class StartProfile implements iProfile{
         for(Item item: itemList){
             receipt = receipt.add(item.getPrice());
         }
-        System.out.println(String.format("Cena przedmiotów to: %.2f ", receipt.floatValue()));
+        System.out.println(String.format("Wartość rzeczy w koszyku : %.2f ", receipt.floatValue()));
     }
 }

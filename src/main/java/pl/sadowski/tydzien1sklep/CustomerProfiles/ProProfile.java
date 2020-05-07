@@ -26,12 +26,11 @@ public int DISCOUNT;
 
     @Override
     public void calculatePrice(List<Item> itemList) {
-        System.out.println(VAT + " i przecena : " + DISCOUNT);
         BigDecimal receipt = new BigDecimal("0.0");
         for(Item it: itemList){
             receipt = receipt.add(it.getPrice());
         }
         receipt = receipt.multiply(new BigDecimal((float)(VAT +100)*(100-DISCOUNT)/10000));
-        System.out.println("W KOSZYKU PRO MAMY: " + receipt.floatValue());
+        System.out.println(String.format("Wartość rzeczy w koszyku z doliczonym VAT i zniżką : %.2f", receipt.floatValue()));
     }
 }
