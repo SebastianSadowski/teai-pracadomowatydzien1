@@ -1,4 +1,4 @@
-package pl.sadowski.tydzien1sklep;
+package ShopFasade;
 
 
 import lombok.Getter;
