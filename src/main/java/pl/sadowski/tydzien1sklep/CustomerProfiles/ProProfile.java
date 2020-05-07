@@ -21,7 +21,7 @@ import java.util.List;
 @ConfigurationProperties(prefix="")
 public class ProProfile implements iProfile{
 
-public int VAT;
+public float VAT;
 public int DISCOUNT;
 
     @Override

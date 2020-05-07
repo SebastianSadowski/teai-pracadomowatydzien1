@@ -24,7 +24,7 @@ import java.util.stream.Stream;
 public class PlusProfile implements iProfile{
 
     @Value("${plus.VAT}")
-int VAT;
+float VAT;
 
     @Override
     public void calculatePrice(List<Item> itemList) {
@@ -33,7 +33,7 @@ BigDecimal receipt = new BigDecimal("0.0");
         for(Item it: itemList){
             receipt = receipt.add(it.getPrice());
         }
-        receipt.multiply(new BigDecimal((float) (100+VAT)/100));
+        receipt = receipt.multiply(new BigDecimal(((100+VAT)/100)));
         System.out.println(String.format("Wartość rzeczy w koszyku z doliczonym VAT : %.2f", receipt.floatValue()));
     }
 }
